@@ -1,4 +1,4 @@
-package br.com.phamtecnologiarepositories;
+package br.com.phamtecnologia.repositories;
 
 import java.util.Optional;
 
@@ -15,6 +15,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 	@Query("select u from Usuario u where u.email = :email")
 	Optional<Usuario> findByEmail(@Param("email") String email);
 	
-	@Query("select u from Usuario u where u.email = :email and u.senh = :senha")
+	@Query("select u from Usuario u where u.email = :email and u.senha = :senha")
 	Optional<Usuario> findByEmailAndSenha(@Param("email") String email,@Param("senha") String senha);
 }
